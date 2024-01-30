@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/form.css" />
+    <title>
+      <% if(locals.book) { %> <%= book.title %> <% } else { %> New Book <% } %>
+    </title>
+  </head>
+  <body>
+    <h1 class="heading">Enter a New Book!</h1>
+
+    <div class="flex-container">
+      <form action="" class="book-form">
+        <label for="title" class="input-label">Title:</label>
+        <input type="text" name="title" id="title" class="input-box" required />
+        <label for="author" class="input-label">Author:</label>
+        <input
+          type="text"
+          name="author"
+          id="author"
+          class="input-box"
+          required
+        />
+        <label for="olid" class="input-label">OLID:</label>
+        <input type="text" name="olid" id="olid" class="input-box" required />
+        <label for="description" class="input-label">Description:</label>
+        <textarea
+          name="description"
+          id="description"
+          class="input-box"
+          required
+        ></textarea>
+        <label for="notes" class="input-label">Notes:</label>
+        <textarea name="notes" id="notes" class="input-box"></textarea>
+        <input type="submit" value="Submit" class="submit-btn" />
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles\style.css" />
+    <script
+      src="https://kit.fontawesome.com/16c076b5f2.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>PagePal</title>
+  </head>
+  <body>
+    <nav>
+      <p class="site-name">PagePal</p>
+      <a href="#" class="home">Home</a>
+    </nav>
+
+    <div class="flex-container">
+      <div class="grid-container">
+        <% for (let i = 0; i < bookList.length; i++) { %>
+        <div class="book-container">
+          <img class="cover-img" src="<%= bookList[i].cover %>" alt="" />
+
+          <div class="book-info">
+            <div class="title-row">
+              <h2 class="book-title"><%= bookList[i].title %></h2>
+
+              <a
+                href="http://localhost:3000/book/<%= bookList[i].id %>"
+                class="btn see-notes-btn"
+              >
+                See Notes
+              </a>
+            </div>
+
+            <div class="author-row">
+              <p class="book-author"><%= bookList[i].author %></p>
+
+              <div class="author-row-btns">
+                <a class="btn edit-btn">Edit</a>
+                <a class="btn delete-btn">Delete</a>
+              </div>
+            </div>
+
+            <% for (let j = 0; j < Math.floor(bookList[i].rating); j++) { %>
+            <i class="fa-solid fa-star"></i>
+            <% } %> <% if (bookList[i].rating % 1 > 0) { %>
+            <i class="fa-solid fa-star-half-stroke"></i>
+            <% } %> <% for (let k = 1; k < (6 - Math.ceil(bookList[i].rating));
+            k++) { %>
+            <i class="fa-regular fa-star"></i>
+            <% } %>
+            <p class="book-description"><%= bookList[i].description %></p>
+          </div>
+        </div>
+        <% } %>
+
+        <div class="new-book">
+          <i class="fa-solid fa-plus"></i>
+          <a href="/new-book" class="new-book-link"><span></span></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

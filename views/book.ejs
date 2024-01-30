@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/book.css" />
+    <script
+      src="https://kit.fontawesome.com/16c076b5f2.js"
+      crossorigin="anonymous"
+    ></script>
+    <title><%= book.title %></title>
+  </head>
+  <body>
+    <div class="book-details main-flex-item">
+      <img src="<%= book.cover %>" alt="<%= book.title %>" class="cover-img" />
+
+      <div class="details-text">
+        <h1 class="title-heading"><%= book.title %></h1>
+
+        <p class="author"><%= book.author %></p>
+
+        <div class="rating">
+          <% for (let j = 0; j < Math.floor(book.rating); j++) { %>
+          <i class="fa-solid fa-star"></i>
+          <% } %> <% if (book.rating % 1 > 0) { %>
+          <i class="fa-solid fa-star-half-stroke"></i>
+          <% } %> <% for (let k = 1; k < (6 - Math.ceil(book.rating)); k++) { %>
+          <i class="fa-regular fa-star"></i>
+          <% } %>
+        </div>
+
+        <p class="olid">OLID: <%= book.olid %></p>
+
+        <div class="btns">
+          <a href="#" class="edit-btn btn">Edit</a>
+          <a href="#" class="delete-btn btn">Delete</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="description-container main-flex-item">
+      <p><%= book.description %></p>
+    </div>
+
+    <div class="notes-container main-flex-item">
+      <h2>Notes</h2>
+
+      <p><%= book.notes %></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #232323;
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.main-flex-item {
+  width: 50rem;
+}
+
+.book-details {
+  display: flex;
+  gap: 2rem;
+}
+
+.cover-img {
+  width: 189px;
+  height: 312px;
+}
+
+.title-heading {
+  font-size: 4rem;
+}
+
+.author {
+  font-size: 2rem;
+}
+
+.rating {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: orange;
+}
+
+.olid {
+  margin-bottom: 1rem;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.btn:link {
+  display: inline-block;
+  width: 5rem;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  border: #fff solid 1px;
+  border-radius: 5px;
+}
+
+.edit-btn:link {
+  background-color: #008cba;
+}
+
+.delete-btn:link {
+  background-color: #f44336;
+}
