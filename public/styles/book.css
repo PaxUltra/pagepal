@@ -51,7 +51,8 @@ body {
   font-size: 0.9rem;
 }
 
-.btn:link {
+.btn:link,
+.btn:visited {
   display: inline-block;
   width: 5rem;
   text-align: center;

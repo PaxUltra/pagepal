@@ -32,8 +32,8 @@
         <p class="olid">OLID: <%= book.olid %></p>
 
         <div class="btns">
-          <a href="#" class="edit-btn btn">Edit</a>
-          <a href="#" class="delete-btn btn">Delete</a>
+          <a href="/edit/<%= book.id %>" class="edit-btn btn">Edit</a>
+          <a href="/delete/<%= book.id %>" class="delete-btn btn">Delete</a>
         </div>
       </div>
     </div>

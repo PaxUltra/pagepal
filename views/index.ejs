@@ -38,8 +38,8 @@
               <p class="book-author"><%= bookList[i].author %></p>
 
               <div class="author-row-btns">
-                <a class="btn edit-btn">Edit</a>
-                <a class="btn delete-btn">Delete</a>
+                <a href="/edit/<%= bookList[i].id %>" class="btn edit-btn">Edit</a>
+                <a href="/delete/<%= bookList[i].id %>" class="btn delete-btn">Delete</a>
               </div>
             </div>
 

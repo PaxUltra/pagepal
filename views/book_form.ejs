@@ -9,31 +9,34 @@
     </title>
   </head>
   <body>
-    <h1 class="heading">Enter a New Book!</h1>
+    <h1 class="heading"><% if(locals.book) { %>Edit <%= book.title %>!<% } else { %>Enter a New Book!<% } %></h1>
 
     <div class="flex-container">
-      <form action="" class="book-form">
+      <form action="<% if(locals.book) { %>/edit/<%= book.id %><% } else { %> /create-book <% } %>" method="post" class="book-form">
         <label for="title" class="input-label">Title:</label>
-        <input type="text" name="title" id="title" class="input-box" required />
+        <input type="text" name="title" id="title" class="input-box" value="<% if(locals.book) { %><%= book.title %><% } %>" required />
         <label for="author" class="input-label">Author:</label>
         <input
           type="text"
           name="author"
           id="author"
           class="input-box"
+          value="<% if(locals.book) { %><%= book.author %><% } %>"
           required
         />
+        <label for="rating" class="input-label">Rating:</label>
+        <input type="number" name="rating" id="rating" class="input-box" min="0" max="5" step="0.5" value="<% if(locals.book) { %><%= book.rating %><% } %>" required />
         <label for="olid" class="input-label">OLID:</label>
-        <input type="text" name="olid" id="olid" class="input-box" required />
+        <input type="text" name="olid" id="olid" class="input-box" value="<% if(locals.book) { %><%= book.olid %><% } %>" required />
         <label for="description" class="input-label">Description:</label>
         <textarea
           name="description"
           id="description"
           class="input-box"
           required
-        ></textarea>
+        ><% if(locals.book) { %><%= book.description %><% } %></textarea>
         <label for="notes" class="input-label">Notes:</label>
-        <textarea name="notes" id="notes" class="input-box"></textarea>
+        <textarea name="notes" id="notes" class="input-box"><% if(locals.book) { %><%= book.notes %><% } %></textarea>
         <input type="submit" value="Submit" class="submit-btn" />
       </form>
     </div>
