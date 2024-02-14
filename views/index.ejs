@@ -24,32 +24,29 @@
           <div class="book-info">
             <div class="title-row">
               <h2 class="book-title"><%= bookList[i].title %></h2>
-
-              <a
-                href="http://localhost:3000/book/<%= bookList[i].id %>"
-                class="btn see-notes-btn"
-              >
-                See Notes
-              </a>
             </div>
 
             <div class="author-row">
               <p class="book-author"><%= bookList[i].author %></p>
-
-              <div class="author-row-btns">
-                <a href="/edit/<%= bookList[i].id %>" class="btn edit-btn">Edit</a>
-                <a href="/delete/<%= bookList[i].id %>" class="btn delete-btn">Delete</a>
-              </div>
             </div>
 
-            <% for (let j = 0; j < Math.floor(bookList[i].rating); j++) { %>
-            <i class="fa-solid fa-star"></i>
-            <% } %> <% if (bookList[i].rating % 1 > 0) { %>
-            <i class="fa-solid fa-star-half-stroke"></i>
-            <% } %> <% for (let k = 1; k < (6 - Math.ceil(bookList[i].rating));
-            k++) { %>
-            <i class="fa-regular fa-star"></i>
-            <% } %>
+            <div class="rating-stars">
+              <% for (let j = 0; j < Math.floor(bookList[i].rating); j++) { %>
+              <i class="fa-solid fa-star"></i>
+              <% } %> <% if (bookList[i].rating % 1 > 0) { %>
+              <i class="fa-solid fa-star-half-stroke"></i>
+              <% } %> <% for (let k = 1; k < (6 - Math.ceil(bookList[i].rating));
+              k++) { %>
+              <i class="fa-regular fa-star"></i>
+              <% } %>
+            </div>
+
+            <div class="btns">
+              <a href="http://localhost:3000/book/<%= bookList[i].id %>" class="btn see-notes-btn">See Notes</a>
+              <a href="/edit/<%= bookList[i].id %>" class="btn edit-btn">Edit</a>
+              <a href="/delete/<%= bookList[i].id %>" class="btn delete-btn">Delete</a>
+            </div>
+
             <p class="book-description"><%= bookList[i].description %></p>
           </div>
         </div>

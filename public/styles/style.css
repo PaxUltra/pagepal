@@ -63,24 +63,17 @@ nav {
 .book-container {
   position: relative;
   border: #fff 1px solid;
-
   width: 287px;
   height: 475px;
 }
 
 .cover-img {
-  /* width: 287px;
-  height: 475px; */
-
   width: 100%;
   height: 100%;
 }
 
 .book-info {
-  /* width: 287px; */
-
   width: 100%;
-
   height: 6rem;
   padding: 0.5rem;
   background-color: rgba(0, 0, 0, 0.8);
@@ -97,23 +90,30 @@ nav {
 
 /* Title row styles */
 
-.title-row {
-  display: flex;
-  justify-content: space-between;
-}
-
 .book-title {
   color: #fff;
 }
 
-/* Author row styles */
+/* Star styles */
 
-.author-row {
-  display: flex;
-  justify-content: space-between;
+.rating-stars {
+  margin-bottom: 0.5rem;
+}
+
+.fa-star,
+.fa-star-half-stroke {
+  color: orange;
 }
 
 /* Button styles */
+
+.btns {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 0.25rem;
+}
 
 .btn {
   color: #fff;
@@ -123,14 +123,13 @@ nav {
 }
 
 .see-notes-btn {
-  height: 2rem;
-  padding: 0 0.25rem 0 0.25rem;
+  padding: 0 0.2rem 0 0.2rem;
+  text-wrap: nowrap;
 }
 
 .edit-btn,
 .delete-btn {
-  width: 3.5rem;
-  padding: 0 0.25rem 0 0.25rem;
+  padding: 0 0.2rem 0 0.2rem;
 }
 
 .edit-btn:hover,
@@ -146,17 +145,9 @@ nav {
 
 /* Misc styles */
 
-.book-author {
-  color: #fff;
-}
-
+.book-author,
 .book-description {
   color: #fff;
-}
-
-.fa-star,
-.fa-star-half-stroke {
-  color: orange;
 }
 
 .new-book {
