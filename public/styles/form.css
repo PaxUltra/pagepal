@@ -20,7 +20,6 @@ body {
 }
 
 .flex-container {
-  /* height: 80vh; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,4 +53,13 @@ body {
 
 .submit-btn:active {
   background-color: #006f93;
+}
+
+/* Responsive */
+
+/* Extra small */
+@media only screen and (max-width: 600px) {
+  .input-box {
+    width: auto;
+  }
 }
