@@ -69,3 +69,26 @@ body {
 .delete-btn:link {
   background-color: #f44336;
 }
+
+/* Responsive */
+
+/* Extra small */
+@media only screen and (max-width: 600px) {
+  .main-flex-item {
+    width: auto;
+  }
+}
+
+/* Small */
+@media only screen and (min-width: 600px) {
+  .main-flex-item {
+    width: auto;
+  }
+}
+
+/* Large */
+@media only screen and (min-width: 992px) {
+  .main-flex-item {
+    width: 50rem;
+  }
+}
