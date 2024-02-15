@@ -175,3 +175,26 @@ nav {
   left: 0;
   z-index: 1;
 }
+
+/* Responsive */
+
+/* Extra small */
+@media only screen and (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 287px;
+  }
+}
+
+/* Small */
+@media only screen and (min-width: 600px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 287px);
+  }
+}
+
+/* Large */
+@media only screen and (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 287px);
+  }
+}
