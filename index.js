@@ -7,7 +7,7 @@ const app = express();
 const port = 3000;
 
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 const db = new pg.Client({
   user: "postgres",
@@ -40,6 +40,7 @@ app.get("/new-book", (req, res) => {
 app.post("/create-book", async (req, res) => {
   const values = [req.body.title, req.body.author, req.body.olid, req.body.description, req.body.notes, `https://covers.openlibrary.org/b/olid/${req.body.olid}-L.jpg`, req.body.rating]
   await db.query('INSERT INTO books (title, author, olid, description, notes, cover, rating) VALUES ($1, $2, $3, $4, $5, $6, $7)', values);
+
   res.redirect("/");
 });
 
@@ -51,9 +52,7 @@ app.get("/delete/:id", async (req, res) => {
 });
 
 app.get("/edit/:id", async (req, res) => {
-  const book = (
-    await db.query("SELECT * FROM books WHERE id = " + req.params.id)
-  ).rows[0];
+  const book = (await db.query("SELECT * FROM books WHERE id = " + req.params.id)).rows[0];
 
   res.render("book_form.ejs", { book: book });
 });

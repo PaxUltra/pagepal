@@ -23,16 +23,6 @@ nav {
   padding: 0.5rem;
 }
 
-.home:link {
-  padding: 0.5rem;
-  color: #fff;
-  text-decoration: none;
-}
-
-.home:hover {
-  background-color: #111;
-}
-
 /* Main containers */
 
 .flex-container {
@@ -50,10 +40,7 @@ nav {
 
 .book-container,
 .cover-img,
-.new-book {
-  border-radius: 10px;
-}
-
+.new-book,
 .book-info {
   border-radius: 10px;
 }
